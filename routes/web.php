@@ -34,6 +34,19 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware' => ['auth'
 
 });
 
+
+Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin'], function() {
+  //  Route::get('/', 'CardController@index');
+//    Route::put('store/{id}','CardController@store',function ($id){
+//        return $id;
+//    });
+    Route::resource('card','CardController');
+});
+
+
+
+
+
 // 后台系统日志
 Route::group(['prefix' => 'admin/log','middleware' => ['auth','check.permission:log']],function ($router)
 {

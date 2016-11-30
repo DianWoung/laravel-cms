@@ -11,7 +11,7 @@
             <a href="{{url('admin/dash')}}">{!!trans('admin/breadcrumb.home')!!}</a>
         </li>
         <li class="active">
-            <strong>{!!trans('admin/breadcrumb.user.list')!!}</strong>
+            <strong>{!!trans('admin/breadcrumb.user.list')!!}</strong>s
         </li>
     </ol>
   </div>
