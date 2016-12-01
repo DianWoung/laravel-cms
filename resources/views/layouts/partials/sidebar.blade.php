@@ -8,10 +8,8 @@
                    </span>
               <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                   <span class="clear"> <span class="block m-t-xs"> {{getUser()->name}} <strong class="font-bold"></strong>
-                   </span> <span class="text-muted text-xs block">Art Director <b class="caret"></b></span> </span> </a>
+                   </span> <span class="text-muted text-xs block">管理员<b class="caret"></b></span> </span> </a>
               <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                  <li><a href="profile.html">Profile</a></li>
-                  <li class="divider"></li>
                   <li><a href="login.html">Logout</a></li>
               </ul>
           </div>

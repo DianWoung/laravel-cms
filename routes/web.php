@@ -36,10 +36,10 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware' => ['auth'
 
 
 Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin'], function() {
-  //  Route::get('/', 'CardController@index');
-//    Route::put('store/{id}','CardController@store',function ($id){
-//        return $id;
-//    });
+//    Route::get('card/{id}', 'CardController@show');
+//    Route::get('card/{id}/edit','CardController@edit');
+
+
     Route::resource('card','CardController');
 });
 

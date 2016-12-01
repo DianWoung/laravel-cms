@@ -32,4 +32,5 @@ class User extends Authenticatable implements HasRoleAndPermissionContract
     {
         $this->attributes['password'] = bcrypt($value);
     }
+
 }

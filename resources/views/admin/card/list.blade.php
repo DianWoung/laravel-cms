@@ -12,13 +12,13 @@
                 </li>
             </ol>
         </div>
-        @permission(config('admin.permissions.card.create'))
+
         <div class="col-lg-2">
             <div class="title-action">
                 <a href="{{url('admin/card/create')}}" class="btn btn-info">新增卡片</a>
             </div>
         </div>
-        @endpermission
+
     </div>
     <div class="wrapper wrapper-content animated fadeInRight">
         <div class="row">
@@ -41,19 +41,48 @@
                             <table class="table table-striped table-bordered table-hover dataTablesAjax" >
                                 <thead>
                                 <tr>
-                                    <th>{{trans('admin/user.model.id')}}</th>
-                                    <th>{{trans('admin/user.model.name')}}</th>
-                                    <th>{{trans('admin/user.model.username')}}</th>
-                                    <th>{{trans('admin/user.model.created_at')}}</th>
-                                    <th>{{trans('admin/user.model.updated_at')}}</th>
-                                    <th>{{trans('admin/action.title')}}</th>
+                                    <th>id</th>
+                                    <th>卡号</th>
+                                    <th>卡数据</th>
+                                    <th>编号</th>
+                                    <th>绑定用户</th>
+                                    <th>绑定内容</th>
+                                    <th>激活状态</th>
+                                    <th>激活时间</th>
+                                    <th>有效期</th>
+                                    <th>操作</th>
                                 </tr>
                                 </thead>
+                                @foreach($cards as $card)
                                 <tbody>
+                                <td>{{ $card->id }}</td>
+                                <td>{{ $card->code }}</td>
+                                <td>{{ $card->data }}</td>
+                                <td>{{ $card->sernum }}</td>
+                                <td>{{ $card->username }}</td>
+                                <td>{{ $card->content_id }}</td>
+                                <td>{{ $card->is_active }}</td>
+                                <td>{{ $card->insert_time }}</td>
+                                <td>{{ $card->use_limit_time }}</td>
+                                <td>
+                                    <a href="{{ url('admin/card/'.$card->id.'/edit') }}" style="display: inline;">
+                                        <button type="submit" class="btn btn-info">编辑</button>
+                                    </a>
 
+
+                                    <form action="{{ url('admin/card/'.$card->id) }}" method="POST" style="display: inline;">
+                                        {{ method_field('DELETE') }}
+                                        {{ csrf_field() }}
+                                        <button type="submit" class="btn btn-danger">删除</button>
+                                    </form></td>
                                 </tbody>
+                                @endforeach
                             </table>
+                            <span style="float: right"> {{ $cards->links() }}</span>
                         </div>
+
+
+
                     </div>
                 </div>
             </div>
