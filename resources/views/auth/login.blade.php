@@ -14,7 +14,7 @@
   {{ csrf_field() }}
   <dl class="admin_login">
     <dt>
-    <strong>站点后台管理系统</strong>
+    <strong>迪赞科技后台管理系统</strong>
     <em>Management System</em>
     </dt>
     <dd class="user_icon">
@@ -37,8 +37,8 @@
     <input type="submit" value="立即登陆" class="submit_btn"/>
     </dd>
     <dd>
-    <p>晚黎后台权限系统</p>
-    <p>iwanli</p>
+    <p>迪赞后台权限系统</p>
+    <p>www.designuuuu.com</p>
     </dd>
   </dl>
 </form>
