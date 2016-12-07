@@ -62,10 +62,4 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
 @endsection

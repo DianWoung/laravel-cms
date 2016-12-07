@@ -80,17 +80,9 @@
                             </table>
                             <span style="float: right"> {{ $cards->links() }}</span>
                         </div>
-
-
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
-
-
-
 @endsection
