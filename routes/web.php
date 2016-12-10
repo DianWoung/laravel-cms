@@ -47,7 +47,7 @@ Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin
 
     Route::resource('card','CardController');
     Route::get('card/{id}','CardController@show');
-    Route::post('upload','UploadfileController@upload');
+    Route::post('upload','UploadfileController@uploadOSS');
 });
 
 

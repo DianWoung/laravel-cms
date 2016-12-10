@@ -124,6 +124,20 @@ return [
 
     'log_level' => env('APP_LOG_LEVEL', 'debug'),
 
+
+    /**
+     *
+     * OSS配置
+     *
+     *
+     */
+
+    'ossServer' => 'http://oss-cn-hangzhou.aliyuncs.com',
+    'ossServerInternal' => 'http://oss-cn-hangzhou-internal.aliyuncs.com',
+    'AccessKeyId' => 'VZB6f2OeaKQhcZGV',
+    'AccessKeySecret' => 'k3kzV3qjthkbEJgczwfAlMkLwziLpx',
+
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
@@ -167,7 +181,7 @@ return [
          * Package Service Providers...
          */
 
-        Mews\Captcha\CaptchaServiceProvider::class,//验证码
+        //Mews\Captcha\CaptchaServiceProvider::class,//验证码
         GeniusTS\Roles\RolesServiceProvider::class,//权限包
         Prettus\Repository\Providers\RepositoryServiceProvider::class,//l5-repository
         Laracasts\Flash\FlashServiceProvider::class, // flash 通知
