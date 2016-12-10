@@ -18,9 +18,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
-Route::get('/example', function(){
-    return view('example');
+Route::get('/example',function(){
+   return view('example');
 });
+
+
 
 Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware' => ['auth']],function ($router)
 {
@@ -44,6 +46,8 @@ Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin
 
 
     Route::resource('card','CardController');
+    Route::get('card/{id}','CardController@show');
+    Route::post('upload','UploadfileController@upload');
 });
 
 

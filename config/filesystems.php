@@ -53,6 +53,10 @@ return [
             'root' => storage_path('app/public'),
             'visibility' => 'public',
         ],
+        'uploads' => [
+            'driver' => 'local',
+            'root' => public_path('uploads'),
+        ],
 
         's3' => [
             'driver' => 's3',
@@ -70,7 +74,7 @@ return [
              ],
             'access_key'=> 'le5qZii2o6iez9brj-_KoFUuN0UKir15QS28NzBJ',  //AccessKey
             'secret_key'=> 'zKrTVwyLbsNfHuClvn8hk33UT-HZVEzHiQTFn_Eu',  //SecretKey
-            'bucket'    => 'iwanli',  //Bucket名字
+            'bucket'    => '',  //Bucket名字
             'notify_url'=> '',  //持久化处理回调地址
         ],
 

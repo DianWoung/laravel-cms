@@ -11,14 +11,17 @@
     "laravel-elixir": "^6.0.0-11",
     "laravel-elixir-vue-2": "^0.2.0",
     "laravel-elixir-webpack-official": "^1.0.2",
-    "vueify":"^8.5.4",
+    "vueify": "^8.5.4",
     "lodash": "^4.16.2",
     "vue": "^2.0.1",
     "vue-resource": "^1.0.3"
   },
-  "browserify":{
-    "transform":[
+  "browserify": {
+    "transform": [
       "vueify"
     ]
+  },
+  "dependencies": {
+    "vue-router": "^2.1.1"
   }
 }

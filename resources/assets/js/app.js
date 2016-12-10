@@ -14,6 +14,7 @@ require('./bootstrap');
  */
 
 Vue.component('example', require('./components/Example.vue'));
+Vue.component('uploadfile', require('./components/Uploadfile.vue'));
 
 const app = new Vue({
     el: '#app'
