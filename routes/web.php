@@ -39,6 +39,10 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware' => ['auth'
 
 });
 
+Route::group(['namespace'=>'Admin','prefix'=>'test'],function(){
+    require(__DIR__ . '/test/route.php');
+});
+
 
 Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin'], function() {
 //    Route::get('card/{id}', 'CardController@show');
@@ -48,6 +52,12 @@ Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin
     Route::resource('card','CardController');
     Route::get('card/{id}','CardController@show');
     Route::post('upload','UploadfileController@uploadOSS');
+});
+
+Route::group(['domain'=>'{username}.laravelcms.com'],function(){
+    Route::get('username',function($username){
+        return $username;
+    });
 });
 
 

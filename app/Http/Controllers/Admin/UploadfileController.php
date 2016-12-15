@@ -28,7 +28,7 @@ class UploadfileController extends Controller
     public function uploadOSS(Request $request)
     {
         if ($request->isMethod('post')) {
-            $filePath = $request->file('file')->store('uploads');
+            $filePath = $request->file;
             // 文件是否上传成功
             $this->oss->upload('testtest001.jpg',$filePath);
            return $this->oss->getUrl('testtest001.jpg');
