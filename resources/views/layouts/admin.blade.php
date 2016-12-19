@@ -48,7 +48,6 @@
   <script src="{{asset('vendors/metisMenu/jquery.metisMenu.js')}}"></script>
   <script src="{{asset('vendors/slimscroll/jquery.slimscroll.min.js')}}"></script>
   <script src="{{asset('admin/js/inspinia.js')}}"></script>
-  <script src="{{asset('/js/app.js')}}"></script>
   @yield('js')
 </body>
 </html>

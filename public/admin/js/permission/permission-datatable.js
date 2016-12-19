@@ -10,7 +10,7 @@ var TableDatatablesAjax = function() {
         "regex": true
       },
       "ajax": {
-        'url' : '/admin/permission/ajaxIndex',
+        'url' : location.href+'/ajaxIndex',
       },
       "pagingType": "full_numbers",
       "orderCellsTop": true,
@@ -74,7 +74,7 @@ var TableDatatablesAjax = function() {
         });  
       },
       "language": {
-        url: '/admin/i18n'
+        url: location.href.replace(/.permission/i,'')+'/i18n'
       }
     });
   };

@@ -10,7 +10,7 @@ var TableDatatablesAjax = function() {
         "regex": true
       },
       "ajax": {
-        'url' : '/admin/role/ajaxIndex',
+        'url' : location.href+'/ajaxIndex',
       },
       "pagingType": "full_numbers",
       "orderCellsTop": true,
@@ -74,7 +74,7 @@ var TableDatatablesAjax = function() {
         });  
       },
       "language": {
-        url: '/admin/i18n'
+        url: location.href.replace(/.role/i,'')+'/i18n'
       }
     });
     // 关闭modal清空内容

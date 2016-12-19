@@ -18,11 +18,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
-Route::get('/example',function(){
-   return view('example');
-});
-
-
 
 Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware' => ['auth']],function ($router)
 {
@@ -38,29 +33,11 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware' => ['auth'
 	require(__DIR__ . '/admin/menu.php');
 
 });
-
-Route::group(['namespace'=>'Admin','prefix'=>'test'],function(){
-    require(__DIR__ . '/test/route.php');
-});
-
-
 Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin'], function() {
-//    Route::get('card/{id}', 'CardController@show');
-//    Route::get('card/{id}/edit','CardController@edit');
-
-
     Route::resource('card','CardController');
     Route::get('card/{id}','CardController@show');
     Route::post('upload','UploadfileController@uploadOSS');
 });
-
-Route::group(['domain'=>'{username}.laravelcms.com'],function(){
-    Route::get('username',function($username){
-        return $username;
-    });
-});
-
-
 
 
 

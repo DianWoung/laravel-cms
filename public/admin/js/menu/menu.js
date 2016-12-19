@@ -6,7 +6,7 @@ var MenuList = function() {
       var list = window.JSON.stringify($('#nestable').nestable('serialize'));
       console.log(list);
       $.ajax({
-        url:'/admin/menu/orderable',
+        url:location.href+'/orderable',
         data:{
           nestable:list
         },
