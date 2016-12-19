@@ -33,7 +33,7 @@ var MenuList = function() {
      */
     $(menu.box).on('click',menu.createMenu,function () {
       $.ajax({
-        url:'/admin/menu/create',
+        url:location.href+'/create',
         dataType:'html',
         success:function (htmlData) {
           $(menu.middleBox).removeClass('fadeInRightBig').addClass('bounceOut').hide();
@@ -58,7 +58,7 @@ var MenuList = function() {
       var _item = $(this);
       var _form = $('#createForm');
       $.ajax({
-        url:'/admin/menu',
+        url:location.href,
         type:'post',
         dataType: 'json',
         data:_form.serializeArray(),
@@ -72,7 +72,7 @@ var MenuList = function() {
         success:function (response) {
           layer.msg(response.message);
           setTimeout(function(){
-            window.location.href = '/admin/menu';
+            window.location.href = location.href;
           }, 1000);
         }
       }).fail(function(response) {
