@@ -12,13 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
-
+//用户权限管理系统路由组
 Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware' => ['auth']],function ($router)
 {
 	$router->get('/dash','DashboardController@index')->name('system.index');
@@ -32,11 +32,21 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware' => ['auth'
 	// 菜单
 	require(__DIR__ . '/admin/menu.php');
 
+
 });
-Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin'], function() {
+
+//拓展路由组
+
+Route::group(['middleware' => 'auth'], function() {
     Route::resource('card','CardController');
     Route::get('card/{id}','CardController@show');
     Route::post('upload','UploadfileController@uploadOSS');
+
+
+//注册qasystem组件
+    require(__DIR__ . '/qasystem/route.php');
+
+
 });
 
 

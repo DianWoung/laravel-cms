@@ -139,7 +139,7 @@ var MenuList = function() {
         success:function (response) {
           layer.msg(response.message);
           setTimeout(function(){
-            window.location.href = '/admin/menu';
+           location.reload();
           }, 1000);
         }
       }).fail(function(response) {
