@@ -38,13 +38,23 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware' => ['auth'
 //拓展路由组
 
 Route::group(['middleware' => 'auth'], function() {
-    Route::resource('card','CardController');
-    Route::get('card/{id}','CardController@show');
-    Route::post('upload','UploadfileController@uploadOSS');
+    Route::resource('card', 'CardController');
+    Route::get('card/{id}', 'CardController@show');
+    Route::post('upload', 'UploadfileController@uploadOSS');
 
 
-//注册qasystem组件
-    require(__DIR__ . '/qasystem/route.php');
+//注册extra组件
+    $dir = '../routes/extra/';
+    $file = scandir($dir);
+    foreach ($file as $filename) {
+        if ($filename != '.' && $filename != '..') {
+            require_once($dir . $filename);
+        }
+    }
+
+
+
+  // require(__DIR__ . '/extra/qasystem.php');
 
 
 });
@@ -62,3 +72,12 @@ Route::group(['prefix' => 'admin/log','middleware' => ['auth','check.permission:
 	$router->get('/{date}/{level}','\Arcanedev\LogViewer\Http\Controllers\LogViewerController@showByLevel')->name('log.filter');
 
 });
+
+
+//
+//spl_autoload_register(function($file){
+//    $file = $class . '.php';
+//    if (is_file($file)) {
+//        require_once($file);
+//    }
+//});

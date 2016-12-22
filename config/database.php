@@ -1,6 +1,8 @@
 <?php
 
-return [
+
+
+$main= [
 
     /*
     |--------------------------------------------------------------------------
@@ -54,7 +56,7 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', 'design4u.mysql.rds.aliyuncs.com'),
+            'host' => env('DB_HOST', 'localhost'),
             'port' => env('DB_PORT', '3307'),
             'database' => env('DB_DATABASE', 'common_cms'),
             'username' => env('DB_USERNAME', 'dian126'),
@@ -66,19 +68,6 @@ return [
             'engine' => null,
         ],
 
-        'mysql_qasystem' => [
-            'driver' => 'mysql',
-            'host' =>'design4u.mysql.rds.aliyuncs.com',
-            'port' => '3307',
-            'database' =>'qasystem',
-            'username' =>'dian126',
-            'password' =>'88888888',
-            'charset' => 'utf8',
-            'collation' => 'utf8_unicode_ci',
-            'prefix' => 'qa_',
-            'strict' => true,
-            'engine' => null,
-        ],
 
         'pgsql' => [
             'driver' => 'pgsql',
@@ -133,3 +122,19 @@ return [
     ],
 
 ];
+$extra=[];
+$dir = '../config/extra/';
+$file=scandir($dir);
+foreach ($file as $filename){
+    if($filename!='.' && $filename!='..'){
+        foreach (require_once($dir.$filename) as $key => $value){
+            foreach($value as $k => $va){
+                $extra[$key][$k]=$va;
+            }
+        }
+    }
+};
+
+
+$result = array_merge_recursive($main,$extra);
+return $result;
