@@ -56,7 +56,7 @@ $main= [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', 'localhost'),
+            'host' => env('DB_HOST', 'design4u.mysql.rds.aliyuncs.com'),
             'port' => env('DB_PORT', '3307'),
             'database' => env('DB_DATABASE', 'common_cms'),
             'username' => env('DB_USERNAME', 'dian126'),
@@ -123,7 +123,7 @@ $main= [
 
 ];
 $extra=[];
-$dir = '../config/extra/';
+$dir = __DIR__.'/extra/';
 $file=scandir($dir);
 foreach ($file as $filename){
     if($filename!='.' && $filename!='..'){

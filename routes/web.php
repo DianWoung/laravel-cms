@@ -44,7 +44,7 @@ Route::group(['middleware' => 'auth'], function() {
 
 
 //注册extra组件
-    $dir = '../routes/extra/';
+    $dir = __DIR__.'/extra/';
     $file = scandir($dir);
     foreach ($file as $filename) {
         if ($filename != '.' && $filename != '..') {

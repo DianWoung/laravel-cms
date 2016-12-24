@@ -4,7 +4,7 @@ return [
     'connections'=>[
     'mysql_qasystem' => [
         'driver' => 'mysql',
-        'host' =>'localhost',
+        'host' =>'design4u.mysql.rds.aliyuncs.com',
         'port' => '3307',
         'database' =>'qasystem',
         'username' =>'dian126',
